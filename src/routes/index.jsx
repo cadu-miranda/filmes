@@ -1,9 +1,8 @@
 import React from "react";
 import { createDrawerNavigator } from "@react-navigation/drawer";
-
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import StackRoutes from "./stackRoutes";
-import Movies from "../Movies";
+import Movies from "../pages/Movies";
 
 const Drawer = createDrawerNavigator();
 
@@ -41,7 +40,7 @@ export default function Routes() {
           name="Movies"
           component={Movies}
           options={{
-            title: "Meus filmes",
+            title: "Minha lista",
             drawerIcon: ({ focused, size, color }) => (
               <MaterialCommunityIcons
                 name={focused ? "archive" : "archive-outline"}
