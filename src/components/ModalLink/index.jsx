@@ -7,7 +7,7 @@ export default function ModalLink({ link, title, closeModal }) {
   return (
     <>
       <BackButton onPress={closeModal}>
-        <Feather name="x" size={35} color="#fff" />
+        <Feather name="x" size={32} color="#fff" />
         <MovieTitle numberOfLines={1}>{title}</MovieTitle>
       </BackButton>
 
