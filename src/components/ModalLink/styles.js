@@ -5,7 +5,6 @@ export const BackButton = styled.TouchableOpacity`
   flex-direction: row;
   padding: 10px;
   background-color: #191a30;
-  /* margin-top: 60px; */
 `;
 
 export const MovieTitle = styled.Text`

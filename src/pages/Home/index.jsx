@@ -99,18 +99,18 @@ export default function Home() {
   return (
     <>
       <Container>
-        <Header title="React Prime" />
-        <SearchContainer>
-          <Input
-            placeholder="ex: vingadores..."
-            placeholderTextColor="#ddd"
-          ></Input>
-          <SearchButton>
-            <Feather name="search" size={30} color="#fff" />
-          </SearchButton>
-        </SearchContainer>
-
         <ScrollView showsVerticalScrollIndicator={false}>
+          <Header title="React Prime" />
+          <SearchContainer>
+            <Input
+              placeholder="ex: vingadores..."
+              placeholderTextColor="#ddd"
+            ></Input>
+            <SearchButton>
+              <Feather name="search" size={30} color="#fff" />
+            </SearchButton>
+          </SearchContainer>
+
           <Title>Em cartaz</Title>
           <BannerButton
             activeOpacity={0.75}
@@ -119,7 +119,7 @@ export default function Home() {
             <Banner
               resizeMethod="resize"
               source={{
-                uri: `https://image.tmdb.org/t/p/original/${movieBanner.poster_path}`,
+                uri: `https://image.tmdb.org/t/p/original/${movieBanner?.poster_path}`,
               }}
             />
           </BannerButton>

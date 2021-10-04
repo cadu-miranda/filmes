@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from "styled-components/native";
 
 export const Container = styled.View`
   flex: 1;
@@ -28,8 +28,6 @@ export const HeaderButton = styled.TouchableOpacity`
 export const Banner = styled.Image`
   width: 100%;
   height: 350px;
-  /* border-bottom-left-radius: 70px;
-  border-bottom-right-radius: 70px; */
 `;
 
 export const ButtonLink = styled.TouchableOpacity`
