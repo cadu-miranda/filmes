@@ -13,5 +13,5 @@ export function getListMovies(size, movies) {
 // Gerar um número aleatório com base no tamanho da lista de filmes que for passada.
 
 export function generateRandomMovieBanner(moviesSize) {
-  return Math.floor(Math.random() * moviesSize.length - 10);
+  return Math.floor(Math.random() * moviesSize.length - 11);
 }

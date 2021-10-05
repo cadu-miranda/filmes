@@ -23,6 +23,7 @@ export default function Home() {
   const [topRatedMovies, setTopRatedMovies] = useState([]);
   const [movieBanner, setMovieBanner] = useState({});
   const [loading, setLoading] = useState(true);
+  const [input, setInput] = useState("");
 
   const navigation = useNavigation();
 
@@ -86,6 +87,13 @@ export default function Home() {
     navigation.navigate("Details", { id: item.id });
   }
 
+  function handleMovieSearch() {
+    if (input === "") return;
+
+    navigation.navigate("Search", { name: input });
+    setInput("");
+  }
+
   if (loading) {
     return (
       <>
@@ -105,8 +113,10 @@ export default function Home() {
             <Input
               placeholder="ex: vingadores..."
               placeholderTextColor="#ddd"
+              value={input}
+              onChangeText={(value) => setInput(value)}
             ></Input>
-            <SearchButton>
+            <SearchButton onPress={handleMovieSearch}>
               <Feather name="search" size={30} color="#fff" />
             </SearchButton>
           </SearchContainer>
@@ -123,6 +133,7 @@ export default function Home() {
               }}
             />
           </BannerButton>
+
           <MovieSlider
             horizontal
             showsHorizontalScrollIndicator={false}
