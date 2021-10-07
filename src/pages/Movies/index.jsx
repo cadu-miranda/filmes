@@ -4,6 +4,7 @@ import { getSavedMovies, deleteMovie } from "../../utils/storage";
 import Header from "../../components/Header";
 import FavoritedItem from "../../components/FavoritedItem";
 import { useNavigation, useIsFocused } from "@react-navigation/native";
+import { ScrollView } from "react-native";
 
 export default function Movies() {
   const navigation = useNavigation();

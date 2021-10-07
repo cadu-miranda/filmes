@@ -4,6 +4,7 @@ import { Container, MoviesList } from "./styles";
 import SearchItem from "../../components/SearchItem";
 
 import { useNavigation, useRoute } from "@react-navigation/native";
+import { ActivityIndicator, Image, Text } from "react-native";
 
 export default function Search() {
   const navigation = useNavigation();
@@ -47,24 +48,45 @@ export default function Search() {
   if (loading) {
     return (
       <>
-        <Container></Container>
+        <Container>
+          <Image
+            style={{
+              width: "100%",
+              height: "100%",
+            }}
+            source={require("../../../assets/loading-gif.gif")}
+          ></Image>
+        </Container>
       </>
     );
   }
 
   return (
     <Container>
-      <MoviesList
-        data={movie}
-        showsVerticalScrollIndicator={false}
-        keyExtractor={(item) => String(item.id)}
-        renderItem={({ item }) => (
-          <SearchItem
-            data={item}
-            navigateToDetailsPage={() => navigateToDetailsPage(item)}
-          />
-        )}
-      />
+      {movie.length !== 0 ? (
+        <MoviesList
+          data={movie}
+          showsVerticalScrollIndicator={false}
+          keyExtractor={(item) => String(item.id)}
+          renderItem={({ item }) => (
+            <SearchItem
+              data={item}
+              navigateToDetailsPage={() => navigateToDetailsPage(item)}
+            />
+          )}
+        />
+      ) : (
+        <Text
+          style={{
+            top: "42.5%",
+            color: "#fff",
+            textAlign: "center",
+            fontSize: 18,
+          }}
+        >
+          {`Nenhum filme encontrado.\nTente novamente!`}
+        </Text>
+      )}
     </Container>
   );
 }

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { ScrollView, ActivityIndicator } from "react-native";
+import { ScrollView, ActivityIndicator, Image } from "react-native";
 import Header from "../../components/Header";
 import SliderItem from "../../components/SliderItem";
 import { Feather } from "@expo/vector-icons";
@@ -98,7 +98,14 @@ export default function Home() {
     return (
       <>
         <Container>
-          <ActivityIndicator size="large" color="#fff" />
+          {/* <ActivityIndicator size="large" color="#fff" /> */}
+          <Image
+            style={{
+              width: "100%",
+              height: "100%",
+            }}
+            source={require("../../../assets/loading-gif.gif")}
+          ></Image>
         </Container>
       </>
     );
@@ -111,7 +118,7 @@ export default function Home() {
           <Header title="React Prime" />
           <SearchContainer>
             <Input
-              placeholder="ex: vingadores..."
+              placeholder="ex: interestelar..."
               placeholderTextColor="#ddd"
               value={input}
               onChangeText={(value) => setInput(value)}

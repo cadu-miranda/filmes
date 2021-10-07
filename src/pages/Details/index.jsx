@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { ScrollView, Modal } from "react-native";
+import { ScrollView, Modal, Text } from "react-native";
 import { Feather, Ionicons } from "@expo/vector-icons";
 import Stars from "react-native-stars";
 import { useNavigation, useRoute } from "@react-navigation/native";
@@ -99,9 +99,16 @@ export default function Details() {
             }}
           />
 
-          <ButtonLink activeOpacity={0.75} onPress={() => setOpenLink(true)}>
-            <Feather name="link" size={24} color="#fff" />
-          </ButtonLink>
+          {movie.homepage ? (
+            <>
+              <ButtonLink
+                activeOpacity={0.75}
+                onPress={() => setOpenLink(true)}
+              >
+                <Feather name="link" size={24} color="#fff" />
+              </ButtonLink>
+            </>
+          ) : null}
 
           <Title numberOfLines={2}>{movie.title}</Title>
 
@@ -132,7 +139,23 @@ export default function Details() {
 
           <ScrollView showsVerticalScrollIndicator={false}>
             <Title>Descrição</Title>
-            <Description>{movie?.overview}</Description>
+            {movie?.overview ? (
+              <Description>{movie?.overview}</Description>
+            ) : (
+              <Text
+                style={{
+                  color: "#fff",
+                  fontSize: 16,
+                  fontWeight: "bold",
+                  paddingBottom: 8,
+                  paddingLeft: 14,
+                  paddingRight: 14,
+                  marginTop: 8,
+                }}
+              >
+                Sem descrição.
+              </Text>
+            )}
           </ScrollView>
 
           <Modal animationType="slide" transparent visible={openLink}>
