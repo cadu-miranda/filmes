@@ -49,13 +49,7 @@ export default function Search() {
     return (
       <>
         <Container>
-          <Image
-            style={{
-              width: "100%",
-              height: "100%",
-            }}
-            source={require("../../../assets/loading-gif.gif")}
-          ></Image>
+          <ActivityIndicator size="large" color="#fff" />
         </Container>
       </>
     );

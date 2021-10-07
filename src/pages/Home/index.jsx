@@ -98,14 +98,7 @@ export default function Home() {
     return (
       <>
         <Container>
-          {/* <ActivityIndicator size="large" color="#fff" /> */}
-          <Image
-            style={{
-              width: "100%",
-              height: "100%",
-            }}
-            source={require("../../../assets/loading-gif.gif")}
-          ></Image>
+          <ActivityIndicator size="large" color="#fff" />
         </Container>
       </>
     );
