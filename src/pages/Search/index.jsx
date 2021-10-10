@@ -2,9 +2,8 @@ import React, { useState, useEffect } from "react";
 import api, { key } from "../../services/api";
 import { Container, MoviesList } from "./styles";
 import SearchItem from "../../components/SearchItem";
-
 import { useNavigation, useRoute } from "@react-navigation/native";
-import { ActivityIndicator, Image, Text } from "react-native";
+import { ActivityIndicator, Text } from "react-native";
 
 export default function Search() {
   const navigation = useNavigation();
